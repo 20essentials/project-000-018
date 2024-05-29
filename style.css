@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.myAside {
+  width: 60%;
+  background-color: #0004;
+  border-radius: 999px;
+  margin-inline: auto;
+  display: flex;
+  position: relative;
+  top: 1rem;
+
+  label {
+    padding: 1rem;
+    width: 25%;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+
+  .tab {
+    width: 25%;
+    background-image: linear-gradient(45deg,mediumorchid, mediumturquoise );
+    border-radius: 999px;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 5s;
+    transition: .5s;
+  }
+
+  input[type=radio] {
+    display: none;
+  }
+
+
+
+  #tab-1:checked ~ .tab {
+    transform: translate(0);
+  }
+
+  #tab-2:checked ~ .tab {
+    transform: translate(100%);
+  }
+
+  #tab-3:checked ~ .tab {
+    transform: translate(200%);
+  }
+
+  #tab-4:checked ~ .tab {
+    transform: translate(300%);
+  }
+}
+
+
+
+main {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url('assets/fotos_with_reference_AVIF/img-1.avif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: .5s ease;
+  background-position: center;
+  animation: hueRotate 8s ease-in-out infinite alternate both;
+}
+
+@keyframes hueRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    filter: hue-rotate(45deg);
+  }
+  25% {
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    filter: hue-rotate(135deg) contrast(120%);
+  }
+  75% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(225deg);
+  }
+}
